@@ -1,0 +1,201 @@
+<title>simple Things on Html</title>
+<link rel="icon" href="file:///C:/Users/FT%20TECH/Downloads/s.jpg">
+<h1 id="simp" style="
+position: absolute;
+left: 260px;
+font-size: 90px;
+top: 150px;
+"></h1>
+<html  id="cha"></html>
+<button onclick="ha()">Carate a countdown</button>
+<script>
+function ha(){
+    let sp = prompt("type your date for countdown foramtion goes like this Ex", "Sep 9, 2022 9:45:00 PM")
+var bird = new Date(sp).getTime()
+var x = setInterval(function(){
+
+    var now = new Date().getTime();
+    var distance = bird - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24 ));
+
+    var hrs = Math.floor((distance % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
+
+    var min = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60));
+
+    var sec = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById('simp').innerHTML = days + "D " + hrs + "H "+ min + "M " + sec + "S";
+
+    if(distance < 0){
+        clearInterval(x);
+        document.getElementById('simp').innerHTML = "Hup"
+    }
+}, 1000)
+}
+</script>
+
+<h1 id="clock"></h1>
+<script>
+    setInterval(cloc, 500)
+    function cloc(){
+        var time = new Date();
+        var hrs =  time.getHours();
+        var min = time.getMinutes();
+        var sec = time.getSeconds();
+        var en = "AM";
+        if(hrs > 12){
+            en = "PM"
+        }
+        if(hrs > 12){
+            hrs  = hrs - 12;
+        }
+        if(hrs > 12){
+            hrs = 12;
+        } 
+        if(hrs < 10){
+            hrs =  "0" + hrs
+        }
+        if(min < 10){
+            min = "0" + min
+        }
+     
+        if(sec < 10){
+            sec = "0" +sec
+        }
+        document.getElementById('clock').innerHTML = hrs + ":" + min + ":" + sec+  " "+ en;
+    }
+function hel(){
+    let colo = prompt("type any color name")
+    var x = document.getElementById('cha');
+    x.style.background = colo;
+}
+function ref(){
+    window.location = "index.html"
+}
+</script>
+<button onclick="hel()">Change Background Color</button>
+
+<span onclick="ref()">
+<button>Refresh The page</button>
+</span>
+<button id="del"
+
+
+></button>
+<style>
+    #del{
+        position: absolute;
+bottom: 120px;
+left: 400px;
+font-size: 30px;
+width: 10cm;
+height: 120px;
+background: transparent;
+border: thick;
+transition: 1s;
+    }
+    #del:hover{
+      transition: 2s;
+        background: linear-gradient(to left, lime,magenta);
+    }
+</style>
+<script>
+    var def = new Date("Sep 10, 2025 10:50:20");
+    
+    var x = setInterval(function(){
+    var naw = new Date().getTime();
+    var ds = def - naw;
+    
+    var days = Math.floor(ds / (1000 * 60  * 60 * 24));
+    var hrs = Math.floor((ds % (1000 * 60  * 60 * 24)) / (1000 * 60 * 60));
+    var min = Math.floor((ds % (1000 * 60 * 60)) / (1000 * 60));
+    var sec = Math.floor((ds % (1000 * 60)) / 1000)
+    document.getElementById('del').innerHTML = days + "D " + hrs  + "H " + min + "M " + sec + "S";
+
+    })
+</script>
+<h1 id="some"></h1>
+<script>
+    var das = new Date("Sep 10, 2021 1:17:00 PM").getTime();
+
+    var x = setInterval(function(){
+        var nas = new Date().getTime()
+
+        var distance = das - nas;
+
+        var days = Math.floor(distance / (1000 * 60 *60 *24));
+        var hrs = Math.floor((distance % (1000 * 60 * 60 *24)) / (1000 * 60 *60));
+        var min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60 ));
+        var sec = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('some').innerHTML = days + "D " + hrs + "H " + min + "M " + sec +"s";
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById('some').innerHTML = "EXPIRED"
+        }
+    }, 1000)
+</script>
+<div class="net">
+    <div class="thf"></div>
+</div>
+<style>
+    html{
+
+        overflow: hidden;
+        color: white;
+        background: rgb(100, 100, 100);
+    }
+    .net{
+        top: 11cm;
+        left: 14cm;
+        position: absolute;
+        width: 35px;
+        height: 5cm;
+        background: rgb(170, 9, 9);
+        animation: 2s bls;
+    }
+    @keyframes bls{
+        from{height: 0px;}
+        to{height: 5cm;}
+    }
+    .net::before{
+        position: absolute;
+        content: '';
+        left: 110px;
+        width: 35px;
+        height: 5cm;
+        background: rgb(255, 0, 0);
+        animation: 3s ar;
+
+    }
+    @keyframes ar{
+        from{height: 0px;}
+        to{height: 5cm;}
+    }
+    .net::after{
+        position: absolute;
+        content: '';
+        width: 35px;
+        left: 54px;
+        height: 5cm;
+        transform: skew(30deg);
+        background: rgb(206, 5, 5);
+        animation: 3.5s be;
+
+    }
+    @keyframes be{
+        from{height: 0px;}
+        to{height: 5cm;}
+    }
+    .thf{
+        position: absolute;
+        width: 35px;
+        height: 1cm;
+        background: rgb(100, 100, 100);
+
+        left: -1px;
+        border-radius: 4px 00px 10px;
+        transform: rotate(10deg);
+        bottom: -350px;
+    }
+</style>
